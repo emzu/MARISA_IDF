@@ -1,4 +1,5 @@
 def LOCA_getPrecip():
+  #Initial Code by Colin Evans 
   #Returns LOCA precipitation to dir
   # =============================================================================
   # LOCA
