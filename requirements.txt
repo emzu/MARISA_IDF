@@ -1,0 +1,12 @@
+xarray
+numpy
+matplotlib
+glob
+requests
+pickle
+pandas
+seaborn
+lmoments3
+scipy.stats
+datetime
+os
