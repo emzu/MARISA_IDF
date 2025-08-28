@@ -1,20 +1,20 @@
 # Core data analysis
-numpy==1.26.0
-pandas==2.1.0
-xarray==2025.8.0
-scipy==1.16.1
-requests==2.32.0
+numpy
+pandas
+xarray
+scipy
 
 # Geospatial
-geopandas==1.1.1
-rasterio==1.6.0
-rioxarray==0.13.0
-cartopy==0.25.0
+geopandas
+rasterio
+rioxarray
+cartopy
 
 # Climate / hydrology
-xclim==0.43.0
-lmoments3==1.0.8
-zarr==3.1.2
+xclim
+lmoments3
+zarr
 
 # Optional plotting
-matplotlib==3.9.0
+matplotlib
+requests
