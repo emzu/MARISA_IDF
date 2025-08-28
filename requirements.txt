@@ -1,12 +1,20 @@
-xarray
-numpy
-matplotlib
-glob
-requests
-pickle
-pandas
-seaborn
-lmoments3
-scipy.stats
-datetime
-os
+# Core data analysis
+numpy==1.26.0
+pandas==2.1.0
+xarray==2025.8.0
+scipy==1.16.1
+requests==2.32.0
+
+# Geospatial
+geopandas==1.1.1
+rasterio==1.6.0
+rioxarray==0.13.0
+cartopy==0.25.0
+
+# Climate / hydrology
+xclim==0.43.0
+lmoments3==1.0.8
+zarr==3.1.2
+
+# Optional plotting
+matplotlib==3.9.0
