@@ -12,6 +12,31 @@ from lmoments3 import distr
 from scipy.stats import genextreme
 import os
 
+import geopandas as gpd
+def construct_MARISA_domain():
+  # Construct MARISA Domain from TIGER county files
+  counties = gpd.read_file('/content/drive/MyDrive/Research/MARISA_IDF/data/Boundaries/tl_2024_us_county/tl_2024_us_county.shp').to_crs('EPSG:3857')
+  #Partial CBW
+  cb_bounds = gpd.read_file('/content/drive/MyDrive/Research/MARISA_IDF/data/Boundaries/Chesapeake_Bay_Watershed_Boundary.shp')
+  #NY = 36
+  #WV = 54
+  cbw_partial = counties[counties['STATEFP'].isin(['36', '54'])].clip(cb_bounds)
+
+
+  #Full
+  #PA = 42
+  #Maryland = 24
+  #Delaware = 10
+  #VA = 51
+  domain = counties[counties['STATEFP'].isin(['42', '24', '10', '51'])]
+
+  domain = pd.concat([domain, cbw_partial])
+  domain = domain.reset_index(drop=True)
+
+  domain[['STATEFP', 'NAME', 'geometry']].to_file('/content/MARISA_IDF/data/Boundaries/MARISA_domain.shp')
+
+  return
+    
 def array_mean(series):
     return series.values.mean()
 
